@@ -1,0 +1,18 @@
+{
+  "author": "Brian Link <cpsubrian@gmail.com>",
+  "name": "vows-examples",
+  "description": "Example Vows usage patterns",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TerraEclipse/vows-examples.git"
+  },
+  "engines": {
+    "node": "~0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vows": "0.5.x",
+    "should": "0.3.x"
+  }
+}
