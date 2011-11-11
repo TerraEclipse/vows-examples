@@ -4,19 +4,19 @@
 module.exports = {
   breakfast: function(callback) {
     process.nextTick(function() {
-      callback('eggs', 'bacon');
+      callback(null, 'eggs', 'bacon');
     });
   },
 
   lunch: function(callback) {
     process.nextTick(function() {
-      callback(null, 'sandwich');
+      callback(null, null, 'sandwich');
     });
   },
 
   dinner: function(callback) {
     process.nextTick(function() {
-      callback('steak', 'salad');
+      callback(null, 'steak', 'salad');
     });
   }
 }

@@ -11,38 +11,33 @@ suite.addBatch({
       meals.breakfast(this.callback);
     },
 
-    'we should have eggs and bacon': function(eggs, bacon) {
+    'we should have eggs and bacon': function(err, eggs, bacon) {
+      console.log('- err', err);
       console.log('- eggs', eggs);
       console.log('- bacon', bacon);
       eggs.should.equal('eggs');
       bacon.should.equal('bacon');
     },
 
-    'a separate level': {
-      'more levels': {
-        'the actual vow': function(eggs, bacon){
-          eggs.should.equal('eggs');
-          bacon.should.equal('bacon');    
-        }
-      }
-    },
-
     'and then we eat lunch': {
-      topic: function(eggs, bacon) {
+      topic: function(err, eggs, bacon) {
+        console.log('- - err', err);
         console.log('- - eggs', eggs);
         console.log('- - bacon', bacon);
         meals.lunch(this.callback);
       },
 
-      'we should have null and a sandwich': function(empty, sandwich) {
+      'we should have null and a sandwich': function(err, empty, sandwich) {
+        console.log('- - err', err);
         console.log('- - null', empty);
         console.log('- - sandwich', sandwich);
-        should.be.empty(empty);
+        should.not.exist(empty);
         sandwich.should.equal('sanwich');
       },
 
       'and then we eat dinner': {
-        topic: function(empty, sandwich, eggs, bacon) {
+        topic: function(err, empty, sandwich, err, eggs, bacon) {
+          console.log('- - - err', err);
           console.log('- - - null', empty);
           console.log('- - - sandwich', sandwich);
           console.log('- - - eggs', eggs);
@@ -50,7 +45,8 @@ suite.addBatch({
           meals.dinner(this.callback);
         },
 
-        'we should have steak and salad': function(steak, salad) {
+        'we should have steak and salad': function(err, steak, salad) {
+          console.log('- - - err', err);
           console.log('- - - steak', steak);
           console.log('- - - salad', salad);
           steak.should.equal('steak');
