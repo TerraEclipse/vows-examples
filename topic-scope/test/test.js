@@ -27,12 +27,10 @@ suite.addBatch({
         meals.lunch(this.callback);
       },
 
-      'we should have null and a sandwich': function(err, empty, sandwich) {
+      'we should have null and a sandwich': function(err, sandwich) {
         console.log('- - err', err);
-        console.log('- - null', empty);
         console.log('- - sandwich', sandwich);
-        should.not.exist(empty);
-        sandwich.should.equal('sanwich');
+        sandwich.should.equal('sandwich');
       },
 
       'and then we eat dinner': {

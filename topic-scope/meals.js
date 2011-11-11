@@ -10,7 +10,7 @@ module.exports = {
 
   lunch: function(callback) {
     process.nextTick(function() {
-      callback(null, null, 'sandwich');
+      callback(null, 'sandwich');
     });
   },
 
